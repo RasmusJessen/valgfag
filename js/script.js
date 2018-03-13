@@ -11,7 +11,7 @@ var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
 var brickRowCount = 5;
-var brickColumnCount = 3;
+var brickColumnCount = 4;
 var brickWidth = 75;
 var brickHeight = 20;
 var brickPadding = 10;
@@ -64,7 +64,7 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount) {
-                        alert("YOU WIN, CONGRATS!");
+                        alert("DU VINDER TILLYKKE MED AT HAR SPILDT DIT LIV");
                         document.location.reload();
                     }
                 }
@@ -85,7 +85,8 @@ function drawPaddle() {
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
     ctx.fillStyle = "#0095DD";
     ctx.fill();
-    ctx.closePath();
+    ctx.closePath
+    ();
 }
 function drawBricks() {
     for(c=0; c<brickColumnCount; c++) {
@@ -137,7 +138,7 @@ function draw() {
         else {
             lives--;
             if(!lives) {
-                alert("GAME OVER");
+                alert("FUCK DU ER DÅRLIG");
                 document.location.reload();
             }
             else {
